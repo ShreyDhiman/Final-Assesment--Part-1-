@@ -7,9 +7,13 @@ class Form extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // on submit handler
+
   handleSubmit(event) {
     const { name, phoneNo } = this.state;
     event.preventDefault();
+
+    // Validation for Phone number
     if (/^[6-9]\d{9}$/.test(this.state.phoneNo)) {
       alert(`
     ____Your Details____\n
@@ -24,6 +28,7 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
+        {/* FOR name */}
         <div>
           <label>Name</label>
           <br />
@@ -36,6 +41,7 @@ class Form extends Component {
         </div>
 
         <div>
+          {/* FOR Phone */}
           <label>Phone Number</label>
           <br />
           <input
@@ -45,6 +51,7 @@ class Form extends Component {
             onChange={(e) => this.setState({ phoneNo: e.target.value })}
           />
         </div>
+        {/* FOR submit Button */}
         <div>
           <br />
           <button>Create Account</button>
